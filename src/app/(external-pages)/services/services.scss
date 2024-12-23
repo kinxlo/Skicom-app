@@ -1,0 +1,9 @@
+.bg-offers {
+  background-image: url("/images/services/circle-up.svg"),
+  url("/images/services/circle-center.svg"),
+  url("/images/services/circle-down.svg");
+  background-position: top right,
+  center left,
+  bottom right;
+  background-repeat: no-repeat, no-repeat;
+}
