@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { PiHouse } from "react-icons/pi";
 
 import {
@@ -19,8 +19,8 @@ interface ProductBreadcrumbProperties {
 export const ProductBreadcrumb = ({
   productTitle,
 }: ProductBreadcrumbProperties) => {
-  const pathName = usePathname();
-  const paths = pathName.split("/").filter(Boolean);
+  //   const pathName = usePathname();
+  //   const paths = pathName.split("/").filter(Boolean);
 
   return (
     <div className="bg-gray-100">

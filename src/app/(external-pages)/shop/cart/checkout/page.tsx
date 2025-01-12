@@ -50,13 +50,7 @@ const CheckoutPage = () => {
 
   return (
     <section className="pt-[10rem]">
-      <ProductBreadcrumb
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Cart", href: "/shop/cart" },
-          { label: "Checkout", href: "/shop/cart/checkout" },
-        ]}
-      />
+      <ProductBreadcrumb productTitle={`checkout`} />
       <Wrapper className="px-4 py-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Billing Details Form */}
