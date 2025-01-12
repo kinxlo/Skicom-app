@@ -1,46 +1,16 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { LuBell, LuChevronDown } from "react-icons/lu";
+import { LuBell } from "react-icons/lu";
 
 import { SearchInput } from "~/components/common/search-input";
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "~/components/ui/popover";
 import { Separator } from "~/components/ui/separator";
-import { withDependency } from "~/HOC/withDependencies";
-import { useSession } from "~/hooks/use-session";
-import { AuthService } from "~/services/auth.service";
-import { dependencies } from "~/utils/dependencies";
-import { UnreadNotificationCard } from "./notification";
+import { UnreadNotificationCard } from "./_components/notification";
+import Profile from "./_components/profile";
 
-const BaseDashboardNavbar = ({ authService }: { authService: AuthService }) => {
-  const router = useRouter();
-  const { session, loading } = useSession();
-
-  const handleLogOut = async () => {
-    await authService.logout(router);
-  };
-
-  if (loading) {
-    return <div>Loading...</div>; // Show a loader while session is being fetched
-  }
-
-  if (!session) {
-    return <div>No session found</div>; // Handle the unauthenticated state
-  }
-
+const BaseDashboardNavbar = () => {
   return (
     <nav
       className="sticky top-0 z-[1] border-b-[0.5px] border-border"
@@ -77,33 +47,7 @@ const BaseDashboardNavbar = ({ authService }: { authService: AuthService }) => {
           </div>
           <Separator orientation="vertical" className="h-[45px]" />
           <div className="flex items-center gap-[10px]">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-[5px] focus:outline-none active:outline-none">
-                <Avatar>
-                  <AvatarImage
-                    src={session.user.avatar || "https://github.com/shadcn.png"}
-                  />
-                  <AvatarFallback>
-                    {session.user.name[0]?.toUpperCase() || "U"}
-                  </AvatarFallback>
-                </Avatar>
-                <p className="hidden lg:block">
-                  {session.user.name || "Skicom Admin"}
-                </p>
-                <LuChevronDown className="hidden lg:block" size="20px" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="relative z-[999999]">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={handleLogOut}
-                  className="text-mid-danger"
-                >
-                  Log out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Profile />
           </div>
         </section>
       </section>
@@ -111,8 +55,4 @@ const BaseDashboardNavbar = ({ authService }: { authService: AuthService }) => {
   );
 };
 
-const DashboardNavbar = withDependency(BaseDashboardNavbar, {
-  authService: dependencies.AUTH_SERVICE,
-});
-
-export default DashboardNavbar;
+export default BaseDashboardNavbar;

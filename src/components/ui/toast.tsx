@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 import { MdOutlineClose } from "react-icons/md";
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const ToastProvider = ToastPrimitives.Provider;
 

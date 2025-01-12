@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { LuChevronUp } from "react-icons/lu";
 
 import { useWindowHeight } from "~/hooks/window-height";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const handleTop = () => {
   window && window.scroll({ top: 0, behavior: "smooth" });

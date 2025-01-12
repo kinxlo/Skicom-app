@@ -8,8 +8,6 @@ import { GotoTop } from "~/components/miscellaneous/goto-top";
 import { Progress_Bar } from "~/components/progress-bar";
 import ToastProvider from "~/context/toast-provider";
 
-// import InstallPrompt from "~/lib/pwa/utils";
-
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Skicom",

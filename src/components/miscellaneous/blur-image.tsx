@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, type ComponentProps } from "react";
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 export function BlurImage(properties: ComponentProps<typeof Image>) {
   const [isLoading, setLoading] = useState(true);

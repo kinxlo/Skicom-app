@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { handleMouseEnter } from "~/lib/utils";
+import { handleMouseEnter } from "~/utils/utils";
 import { particlesCanvas } from "./particles";
 import { useWindowWidth } from "~/hooks/window-width";
 

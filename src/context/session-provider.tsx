@@ -3,7 +3,7 @@
 
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-import { getSession } from "~/lib/session"; // Adjust the path to your getSession function
+import { getSession } from "~/lib/session/session"; // Adjust the path to your getSession function
 import { Session, SessionContextType } from "~/types"; // Define the structure of your session in a types file if not done already
 
 const SessionContext = createContext<SessionContextType | undefined>(undefined);

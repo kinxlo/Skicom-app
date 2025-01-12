@@ -1,6 +1,6 @@
 import { FC, HtmlHTMLAttributes, ReactNode } from "react";
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 interface WrapperProperties extends HtmlHTMLAttributes<HTMLDivElement> {
   width?: string;

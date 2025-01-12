@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { Switch } from "~/components/ui/switch";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 interface NotificationPreview {
   header: string;

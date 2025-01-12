@@ -5,6 +5,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useEffect, useState } from "react";
+import { BsCart2 } from "react-icons/bs";
 
 import CustomButton from "~/components/common/common-button/common-button";
 
@@ -53,7 +54,7 @@ export const Navbar: FC = () => {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/services", label: "Services" },
-    { path: "/stores", label: "Stores" },
+    { path: "/shop", label: "Stores" },
     { path: "/contact", label: "Contact" },
   ];
 
@@ -86,6 +87,9 @@ export const Navbar: FC = () => {
         <section className="hidden items-center gap-5 xl:flex">
           {/* Search Dialog Trigger */}
           <SearchDialog />
+          <Link href="/shop/cart">
+            <BsCart2 size={20} />
+          </Link>
 
           <Link href="/welcome" className="text-sm font-semibold">
             Sign Up
@@ -104,6 +108,9 @@ export const Navbar: FC = () => {
         <section className="flex items-center gap-2 xl:hidden">
           {/* Search Dialog Trigger */}
           <SearchDialog />
+          <Link href="/shop/cart">
+            <BsCart2 size={20} />
+          </Link>
           <Hamburger toggled={isOpen} toggle={setIsOpen} size={24} />
         </section>
       </section>

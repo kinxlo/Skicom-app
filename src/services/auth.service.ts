@@ -1,7 +1,7 @@
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 import { HttpAdapter } from "~/adapters/http-adapter";
-import { deleteSession, encrypt, setCookie } from "~/lib/session";
+import { deleteSession, encrypt, setCookie } from "~/lib/session/session";
 import { Toast } from "~/utils/notificationManager";
 
 export class AuthService {
@@ -26,13 +26,13 @@ export class AuthService {
       const expires = new Date(Date.now() + 60 * 60 * 1000);
       const session = await encrypt({ user, expires });
 
-      setCookie(session, { expires, httpOnly: true });
-      router.push("/admin/home");
+      await setCookie(session, { expires, httpOnly: true });
       Toast.getInstance().showToast({
         title: `Success`,
         description: `Welcome Back ${response.user.name}!`,
         variant: `success`,
       });
+      router.push("/admin/home");
     }
   }
 

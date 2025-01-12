@@ -6,7 +6,7 @@ const TIMEOUTMSG = "Waiting for too long...Aborted!";
 const config = {
   baseURL: BASE_URL,
   timeoutErrorMessage: TIMEOUTMSG,
-  withCredentials: false,
+  withCredentials: true,
 };
 
 const http = axios.create(config);

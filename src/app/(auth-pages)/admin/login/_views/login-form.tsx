@@ -41,7 +41,7 @@ const BaseLoginForm = ({ authService }: { authService: AuthService }) => {
 
   const onSubmit = (data: object) => {
     startTransition(async () => {
-      return await authService.login(data, router);
+      await authService.login(data, router);
     });
   };
 

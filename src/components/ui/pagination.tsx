@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 import { ButtonProperties, buttonVariants } from "./button";
 import { LuChevronRight, LuChevronsLeft, LuMoreHorizontal } from "react-icons/lu";
 

@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes } from "react";
 import { LuSearch } from "react-icons/lu";
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 interface SearchProperties extends HTMLAttributes<HTMLDivElement> {
   inputBackgroundColor?: string;
